@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main | LOW</title>
+    <link rel="stylesheet" href="index_style.css">
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <div class="site-header">
+          <div class="site-name">Legend of Words</div>
+          <div class="categories">
+            <a href="#" class="category-link">Map</a>
+            <a href="#" class="category-link">Messages</a>
+            <a href="#" class="category-link">Forum</a>
+            <a href="#" class="category-link">Encyclopedia</a>
+            <a href="#" class="category-link">Updates</a>
+          </div>
+          <div class="auth-buttons"><% if (user) { %> <div class="user-dropdown">
+              <span class="username"><%= user.username %> </span>
+              <div class="dropdown-content">
+                <!-- Add additional dropdown options or links here -->
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="/logout">Logout</a>
+              </div>
+            </div><% } else { %> <a href="login.html" class="login-btn">Login</a>
+            <a href="registration.html" class="register-btn">Register</a><% } %>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="centered-content">
+      <img src="img/monk.png" alt="Monk Image">
+      <h1>Work in Progress!</h1>
+      <h2>Check out the <a href="#updates">Updates</a> section </h2>
+      <div class="login-register">
+        <h2><% if (user) { %> Welcome, <%= user.username %><% } else { %> And <a href="login.html" class="login-btn">Login</a> or <a href="registration.html" class="register-btn bottom-register">Register</a><% } %> </h2>
+      </div>
+    </div>
+  </body>
+</html>

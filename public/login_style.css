@@ -1,0 +1,140 @@
+@font-face {
+	font-family: "Macondo";
+	font-weight: bold;
+	font-style: normal;
+	src: url("fonts/Macondo-Regular.woff2") format("woff2"),
+		url("fonts/Macondo-Regular.woff") format("woff"),
+		url("fonts/Macondo-Regular.ttf") format("ttf");
+}
+
+body {
+	background-image: url("img/newlands.png");
+	background-size: cover;
+	font-family: "Macondo", cursive;
+}
+
+.nav {
+	position: relative;
+	padding-bottom: 13px;
+}
+
+.nav::before,
+.nav::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1.5px;
+	background-color: #e6c5a5;
+}
+
+.nav::after {
+	margin-bottom: 5px;
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	padding-left: 12.5px;
+}
+
+.site-name {
+	font-family: "Macondo", cursive;
+	font-size: 35px;
+	color: #5a3e23;
+	margin-right: 30px;
+}
+
+.categories {
+	display: flex;
+	gap: 20px;
+}
+
+.category-link {
+	font-family: Macondo;
+	font-size: 22.5px;
+	color: #5a3e23;
+	text-decoration: none;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	height: 80vh;
+}
+
+.register-form {
+	padding: 5px;
+	max-width: 320px;
+	margin: 5px auto 10px auto;
+	border: 50px solid transparent;
+	border-image: url(img/border.png) 50 round;
+	background: url(img/texture.png) no-repeat center fixed;
+	background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 3em;
+	margin: 0 0 15px 0;
+	color: #5a3e23;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin-bottom: 15px;
+}
+
+h3 {
+	font-size: 1.2em;
+	color: #5a3e23;
+}
+
+.input-field {
+	margin-bottom: 15px;
+	text-align: left;
+	color: #5a3e23;
+}
+
+input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px;
+	border: 1px solid #5a3e23;
+	border-radius: 4px;
+	background-color: transparent;
+}
+
+.center {
+	text-align: center;
+}
+
+button {
+	font-family: Macondo;
+	font-size: 22.5px;
+	padding: 6.25px 12.5px;
+	border: 1px solid #5a3e23;
+	background-color: #5a3e23;
+	cursor: pointer;
+	margin-bottom: 20px;
+	margin-top: 5px;
+	color: #ffffff;
+	width: 320px;
+}
+
+a {
+	color: #5a3e23;
+	text-decoration: none;
+}
+
+label {
+	margin-bottom: 5px;
+	font-size: 1.1em;
+	display: inline-block;
+}

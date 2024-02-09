@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration | LOW</title>
+    <link rel="stylesheet" href="registration_style.css">
+    <style>
+      .custom-alert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border: 3px solid #ff6666;
+        text-align: center;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        color: #ff6666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <div class="site-header">
+          <div class="site-name">
+            <a href="/">Legend of Words</a>
+          </div>
+          <div class="categories">
+            <a href="#" class="category-link">Map</a>
+            <a href="#" class="category-link">Messages</a>
+            <a href="#" class="category-link">Forum</a>
+            <a href="#" class="category-link">Encyclopedia</a>
+            <a href="#" class="category-link">Updates</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <form class="register-form" id="registerForm" action="/register" method="post">
+        <div>
+          <h1>Register</h1>
+          <h3>Create your LOW account by filling in the details below</h3>
+          <div class="input-field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="input-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="input-field">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+          </div>
+          <div class="center">
+            <button type="button" onclick="validateAndSubmit()">Register</button>
+          </div>
+          <div class="center">
+            <a href="javascript:history.go(-1)">Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="passwordAlert" class="custom-alert">
+      <span class="close-btn" onclick="closeCustomAlert()">&times;</span>
+      <p id="alertMessage"></p>
+    </div>
+    <script>
+      function validateAndSubmit() {
+        if (validatePassword()) {
+          document.getElementById("registerForm").submit();
+        }
+      }
+
+      function validatePassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        if (!pattern.test(password)) {
+          displayCustomAlert("Password must contain at least one digit, one lowercase and one uppercase letter, and be at least 8 characters long.");
+          return false;
+        }
+        if (password !== confirmPassword) {
+          displayCustomAlert("Passwords do not match");
+          return false;
+        }
+        return true;
+      }
+
+      function displayCustomAlert(message) {
+        var alertBox = document.getElementById("passwordAlert");
+        var alertMessage = document.getElementById("alertMessage");
+        alertMessage.innerHTML = message;
+        alertBox.style.display = "block";
+      }
+
+      function closeCustomAlert() {
+        var alertBox = document.getElementById("passwordAlert");
+        alertBox.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

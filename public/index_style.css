@@ -1,0 +1,141 @@
+@font-face {
+	font-family: "Macondo";
+	font-weight: bold;
+	font-style: normal;
+	src: url("fonts/Macondo-Regular.woff2") format("woff2"),
+		url("fonts/Macondo-Regular.woff") format("woff"),
+		url("fonts/Macondo-Regular.ttf") format("ttf");
+}
+
+body {
+	background-image: url("img/newlands.png");
+	background-size: cover;
+	font-family: "Macondo", cursive;
+}
+
+.nav {
+	position: relative;
+	padding-bottom: 13px;
+}
+
+.nav::before,
+.nav::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1.5px;
+	background-color: #e6c5a5;
+}
+
+.nav::after {
+	margin-bottom: 5px;
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	padding-left: 12.5px;
+}
+
+.site-name {
+	font-family: "Macondo", cursive;
+	font-size: 35px;
+	color: #5a3e23;
+	margin-right: 30px;
+}
+
+.categories {
+	display: flex;
+	gap: 20px;
+}
+
+.category-link {
+	font-family: Macondo;
+	font-size: 22.5px;
+	color: #5a3e23;
+	text-decoration: none;
+}
+
+.auth-buttons {
+	margin-left: auto;
+}
+
+.login-btn,
+.register-btn {
+	font-size: 22.5px;
+	color: #5a3e23;
+	padding: 6px 12px;
+	text-decoration: none;
+}
+
+.login-register .bottom-register {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.login-btn {
+	border: 2px solid #5a3e23;
+}
+
+.login-btn:hover {
+	background-color: #f0d1b4;
+}
+
+.centered-content {
+	text-align: center;
+	margin-top: 5%;
+}
+
+h1 {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	color: #5a3e23;
+	font-size: 58px;
+}
+
+h2 {
+	color: #5a3e23;
+	font-size: 30px;
+	margin-top: 10px;
+}
+
+h2 a {
+	color: inherit;
+}
+
+.user-dropdown {
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 80px;
+	z-index: 1;
+	left: 33.5%;
+	transform: translateX(-50%);
+	border-radius: 8px;
+}
+
+.dropdown-content a {
+	color: #5a3e23;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+}
+
+.dropdown-content a:hover {
+	background-color: #f0d1b4;
+}
+
+.username {
+	margin-right: 20px;
+}
+
+.user-dropdown:hover .dropdown-content {
+	display: block;
+}

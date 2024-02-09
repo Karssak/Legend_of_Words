@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login | LOW</title>
+    <link rel="stylesheet" href="login_style.css">
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <div class="site-header">
+          <div class="site-name">
+            <a href="/">Legend of Words</a>
+          </div>
+          <div class="categories">
+            <a href="#" class="category-link">Map</a>
+            <a href="#" class="category-link">Messages</a>
+            <a href="#" class="category-link">Forum</a>
+            <a href="#" class="category-link">Encyclopedia</a>
+            <a href="#" class="category-link">Updates</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <form class="register-form" id="loginForm" action="/login" method="post">
+        <div>
+          <h1>Login</h1>
+          <h3>Enter your credentials to access your account</h3>
+          <div class="input-field">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+          </div>
+          <div class="center">
+            <button type="submit">Login</button>
+          </div>
+          <div class="center">
+            <a href="javascript:history.go(-1)">Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="custom-alert">
+      <span class="close-btn">&times;</span>
+      <p id="errorPopup"></p>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var formData = new FormData(this);
+          fetch('/login', {
+            method: 'POST',
+            body: formData
+          }).then(response => {
+            if (!response.ok) {
+              return response.json().then(data => {
+                throw new Error(data.error || "An error occurred");
+              });
+            }
+            return response.json();
+          }).then(data => {
+            window.location.href = '/';
+          })
+        });
+      });
+
+      function displayErrorPopup(message) {
+        var errorPopup = document.getElementById('errorPopup');
+        errorPopup.textContent = message;
+        document.querySelector('.custom-alert').style.display = 'block';
+      }
+      document.querySelector('.close-btn').addEventListener('click', function() {
+        document.querySelector('.custom-alert').style.display = 'none';
+      });.catch(error => {
+        console.error('Server error:', error);
+        displayErrorPopup(error.message || 'An error occurred');
+      });
+    </script>
+  </body>
+</html>
