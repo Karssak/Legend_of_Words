@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "Macondo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("fonts/Macondo-Regular.woff2") format("woff2"),
+    url("fonts/Macondo-Regular.woff") format("woff"),
+    url("fonts/Macondo-Regular.ttf") format("ttf");
+}
+
+body {
+  background-image: url("img/newlands.png");
+  background-size: cover;
+  font-family: "Macondo", cursive;
+}
+
+.nav {
+  position: relative;
+  padding-bottom: 13px;
+}
+
+.nav::before,
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background-color: #e6c5a5;
+}
+
+.nav::after {
+  margin-bottom: 5px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  padding-left: 12.5px;
+}
+
+.site-name {
+  font-family: "Macondo", cursive;
+  font-size: 35px;
+  color: #5a3e23;
+  margin-right: 30px;
+}
+
+.site-name a {
+  text-decoration: none;
+  color: #5a3e23;
+}
+
+.categories {
+  display: flex;
+  gap: 20px;
+}
+
+.category-link {
+  font-family: Macondo;
+  font-size: 22.5px;
+  color: #5a3e23;
+  text-decoration: none;
+}
+
+.auth-buttons {
+  margin-left: auto;
+}
+
+.user-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  z-index: 1;
+  left: 33.5%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+}
+
+.dropdown-content a {
+  color: #5a3e23;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0d1b4;
+}
+
+.username {
+  margin-right: 20px;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+.register-form {
+  padding: 2px;
+  max-width: 320px;
+  margin: 20px auto -20px auto;
+  border: 50px solid transparent;
+  border-image: url(img/border.png) 50 round;
+  background: url(img/texture.png) no-repeat center fixed;
+  background-size: cover;
+}
+
+.edit-btn {
+  text-align: center;
+  font-family: Macondo;
+  font-size: 18px;
+  background-color: #5a3e23;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-button {
+  font-family: Macondo;
+  font-size: 18px;
+  padding: 6.25px 12.5px;
+  border: 1px solid #5a3e23;
+  background-color: #5a3e23;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #ffffff;
+  width: 140px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8em;
+  margin: 0 0 5px 0;
+  color: #5a3e23;
+}
+
+h2 {
+  font-size: 1.7em;
+  margin-bottom: 5px;
+  color: #5a3e23;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #5a3e23;
+}
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff6666;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff6666;
+}
+
+.language-dropdown {
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.language-dropdown label {
+  margin-right: 10px;
+  font-family: Macondo;
+  font-size: 1.1em;
+  color: #5a3e23;
+}
+
+.language-dropdown select {
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Macondo;
+  font-size: 1.1em;
+  color: #5a3e23;
+  background-color: #f9f9f9;
+  border: 1px solid #5a3e23;
+}
+
+.user-info {
+  text-align: center;
+}
+
+p {
+  color: #5a3e23;
+}

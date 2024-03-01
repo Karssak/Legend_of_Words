@@ -1,140 +1,192 @@
 @font-face {
-	font-family: "Macondo";
-	font-weight: bold;
-	font-style: normal;
-	src: url("fonts/Macondo-Regular.woff2") format("woff2"),
-		url("fonts/Macondo-Regular.woff") format("woff"),
-		url("fonts/Macondo-Regular.ttf") format("ttf");
+  font-family: "Macondo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("fonts/Macondo-Regular.woff2") format("woff2"),
+    url("fonts/Macondo-Regular.woff") format("woff"),
+    url("fonts/Macondo-Regular.ttf") format("ttf");
 }
 
 body {
-	background-image: url("img/newlands.png");
-	background-size: cover;
-	font-family: "Macondo", cursive;
+  background-image: url("img/newlands.png");
+  background-size: cover;
+  font-family: "Macondo", cursive;
 }
 
 .nav {
-	position: relative;
-	padding-bottom: 13px;
+  position: relative;
+  padding-bottom: 13px;
 }
 
 .nav::before,
 .nav::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 1.5px;
-	background-color: #e6c5a5;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background-color: #e6c5a5;
 }
 
 .nav::after {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .site-header {
-	display: flex;
-	align-items: center;
-	padding-left: 12.5px;
+  display: flex;
+  align-items: center;
+  padding-left: 12.5px;
 }
 
 .site-name {
-	font-family: "Macondo", cursive;
-	font-size: 35px;
-	color: #5a3e23;
-	margin-right: 30px;
+  font-family: "Macondo", cursive;
+  font-size: 35px;
+  color: #5a3e23;
+  margin-right: 30px;
+}
+
+.site-name a {
+  text-decoration: none;
 }
 
 .categories {
-	display: flex;
-	gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .category-link {
-	font-family: Macondo;
-	font-size: 22.5px;
-	color: #5a3e23;
-	text-decoration: none;
+  font-family: Macondo;
+  font-size: 22.5px;
+  color: #5a3e23;
+  text-decoration: none;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	height: 80vh;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
 }
 
 .register-form {
-	padding: 5px;
-	max-width: 320px;
-	margin: 5px auto 10px auto;
-	border: 50px solid transparent;
-	border-image: url(img/border.png) 50 round;
-	background: url(img/texture.png) no-repeat center fixed;
-	background-size: cover;
+  padding: 2px;
+  max-width: 320px;
+  margin: 30px auto 10px auto;
+  border: 50px solid transparent;
+  border-image: url(img/border.png) 50 round;
+  background: url(img/texture.png) no-repeat center fixed;
+  background-size: cover;
 }
 
 h1,
 h2,
 h3 {
-	text-align: center;
+  text-align: center;
 }
 
 h1 {
-	font-size: 3em;
-	margin: 0 0 15px 0;
-	color: #5a3e23;
+  font-size: 2.8em;
+  margin: 0 0 15px 0;
+  color: #5a3e23;
 }
 
 h2 {
-	font-size: 1.8em;
-	margin-bottom: 15px;
+  font-size: 1.8em;
+  margin-bottom: 15px;
 }
 
 h3 {
-	font-size: 1.2em;
-	color: #5a3e23;
+  font-size: 1.2em;
+  color: #5a3e23;
 }
 
 .input-field {
-	margin-bottom: 15px;
-	text-align: left;
-	color: #5a3e23;
+  margin-bottom: 15px;
+  text-align: left;
+  color: #5a3e23;
 }
 
 input {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 8px;
-	border: 1px solid #5a3e23;
-	border-radius: 4px;
-	background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #5a3e23;
+  background-color: transparent;
 }
 
 .center {
-	text-align: center;
+  text-align: center;
 }
 
 button {
-	font-family: Macondo;
-	font-size: 22.5px;
-	padding: 6.25px 12.5px;
-	border: 1px solid #5a3e23;
-	background-color: #5a3e23;
-	cursor: pointer;
-	margin-bottom: 20px;
-	margin-top: 5px;
-	color: #ffffff;
-	width: 320px;
+  font-family: Macondo;
+  font-size: 22.5px;
+  padding: 6.25px 12.5px;
+  border: 1px solid #5a3e23;
+  background-color: #5a3e23;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #ffffff;
+  width: 320px;
 }
 
 a {
-	color: #5a3e23;
-	text-decoration: none;
+  color: #5a3e23;
 }
 
 label {
-	margin-bottom: 5px;
-	font-size: 1.1em;
-	display: inline-block;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+.orlogin {
+  text-align: center;
+  color: #5a3e23;
+  font-size: 18px;
+  display: block;
+  margin-top: 5px;
+}
+
+.forgor {
+  text-align: right;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff6666;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff6666;
 }

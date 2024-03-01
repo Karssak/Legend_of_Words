@@ -2,16 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main | LOW</title>
-    <link rel="stylesheet" href="index_style.css">
+    <title>Settings | LOW</title>
+    <link rel="stylesheet" href="settings_style.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
   </head>
   <body>
     <div class="nav">
       <nav>
         <div class="site-header">
-          <div class="site-name">Legend of Words</div>
+          <div class="site-name">
+            <a href="/">Legend of Words</a>
+          </div>
           <div class="categories">
             <a href="#" class="category-link">Map</a>
             <a href="#" class="category-link">Messages</a>
@@ -22,7 +23,6 @@
           <div class="auth-buttons"><% if (user) { %> <div class="user-dropdown">
               <span class="username"><%= user.username %> </span>
               <div class="dropdown-content">
-                <!-- Add additional dropdown options or links here -->
                 <a href="#">Profile</a>
                 <a href="/settings">Settings</a>
                 <a href="/logout">Logout</a>
@@ -33,13 +33,29 @@
         </div>
       </nav>
     </div>
-    <div class="centered-content">
-      <img src="img/monk.png" alt="Monk Image">
-      <h1>Work in Progress!</h1>
-      <h2>Check out the <a href="#updates">Updates</a> section </h2>
-      <div class="login-register">
-        <h2><% if (user) { %> Welcome, <%= user.username %><% } else { %> And <a href="login.html" class="login-btn">Login</a> or <a href="registration.html" class="register-btn bottom-register">Register</a><% } %> </h2>
+    <div class="container">
+      <div class="register-form">
+        <h1>Settings</h1>
+        <div class="user-info">
+          <p>Username: <span id="usernameSpan"><%= user.username %> </span>
+            <button class="edit-btn" id="editUsernameBtn"z>Edit</button>
+          </p>
+          <p>Email: <span id="emailSpan"><%= user.email %> </span>
+            <button class="edit-btn" id="editEmailBtn">Edit</button>
+          </p>
+        </div>
+        <div class="language-dropdown">
+          <label for="languageSelect">Language:</label>
+          <select id="languageSelect">
+            <option value="en" selected>English</option>
+          </select>
+        </div>
+        <button id="deleteAccountBtn" class="delete-button">Delete Account</button>
       </div>
+    </div>
+    <div class="custom-alert">
+      <span class="close-btn">&times;</span>
+      <p id="errorPopup"></p>
     </div>
   </body>
 </html>
