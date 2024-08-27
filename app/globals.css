@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Macondo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/Macondo-Regular.woff2") format("woff2"),
+    url("/fonts/Macondo-Regular.woff") format("woff"),
+    url("/fonts/Macondo-Regular.ttf") format("ttf");
+}
+
+.font-macondo {
+  font-family: "Macondo", sans-serif;
+}
+
+.icon-background {
+  position: absolute;
+  top: -15%;
+  left: 54%;
+
+  /* 
+    
+    Done 54% because the background picture is not centered correctly. No idea why. 
+
+  */
+
+  width: 140%;
+  height: 200%;
+  background-size: cover;
+  background-position: center;
+  transform: translate(-50%, -100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.group:hover .icon-background {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.icon-text {
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  font-size: 1rem;
+  color: #5a3e23;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .icon-text {
+  opacity: 1;
+}
+
+.group .icon-background {
+  background-image: url("/nav/icon-background.svg");
+}
